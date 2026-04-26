@@ -1,6 +1,6 @@
 # DCAFNet
 
-Official implementation of **"Difference-Gated Interaction and Change-Aware Cross-Temporal Fusion Network for Remote Sensing Image Change Detection"**, submitted to *Expert Systems with Applications*.
+Official implementation of **"Difference-Gated Interaction and Change-Aware Cross-Temporal Fusion Network for Remote Sensing Image Change Detection"**.
 
 ## Overview
 
@@ -53,7 +53,3 @@ python test.py --data_name LEVIR --gpu_id 0
 
 The complete source code, including training scripts, model definitions, will be released upon acceptance of the paper.
 
-
-## License
-
-This project is released under the [MIT License](LICENSE).
