@@ -4,10 +4,12 @@ Official implementation of **"Difference-Gated Interaction and Change-Aware Cros
 
 ## Overview
 
-DCAFNet is a two-stage coarse-to-fine framework for remote sensing image change detection that simultaneously addresses pseudo-change suppression and missed detection recovery. The network comprises two key components:
+DCAFNet introduces a unified coarse-to-fine architecture designed for remote sensing change detection, mitigate two long-standing challenges: false alarms from environmental variations and overlooked subtle changes.
 
-- **DGFI (Difference-Gated Feature Interaction):** Employs a change correlation gate derived from bitemporal difference magnitude to adaptively smooth background in unchanged regions while amplifying genuine change signals.
-- **CCTF (Change-Aware Cross-Temporal Fusion):** Leverages coarse predictions as semantic guidance to recalibrate backbone features (CGFR) and employs bidirectional cross-temporal attention with learnable adaptive fusion (CTAF) to recover missed detections.
+The framework is built upon two core modules:
+
+- **DGFI (Difference-Gated Feature Interaction):** Computes channel-wise mean absolute differences between bitemporal features to produce a change correlation gate. This gate drives adaptive background suppression in stable regions and response amplification where genuine changes occur.
+- **CCTF (Change-Aware Cross-Temporal Fusion):** Consists of two sub-modules — CGFR, which uses preliminary predictions to semantically recalibrate encoder features via learnable foreground-background weighting, and CTAF, which performs bidirectional cross-temporal querying followed by level-specific adaptive fusion to capture complementary temporal cues and recover initially missed changes.
 
 ## Requirements
 
@@ -52,4 +54,3 @@ python test.py --data_name LEVIR --gpu_id 0
 ## Code Availability
 
 The complete source code, including training scripts, model definitions, will be released upon acceptance of the paper.
-
